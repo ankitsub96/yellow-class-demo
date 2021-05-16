@@ -24,8 +24,8 @@ module.exports = {
 			let groupsToSend = groupsArr.map(group=>{
 				return {
 					name: group.name,  
-					members: group.name,
-					adminId: group.name,
+					members: group.members,
+					adminId: group.adminId,
 					createdAt: group.createdAt,
 				}
 			})
