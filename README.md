@@ -28,7 +28,7 @@ Functionalities and Sample endpoints-
     }
    Remarks- 
    The fields email, name and password are compulsory to register a user successfully
-
+ 
 
    2. Login Users-
    Method- POST
