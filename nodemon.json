@@ -2,6 +2,6 @@
     "env":{ 
         "PORT": 3000,
         "SECRET": "Mysecret",
-        "MONGO_DB_URL": "mongodb+srv://admin-Ankit:Brainveeta@123@cluster0.xq3rv.mongodb.net/users-yellow?retryWrites=true&w=majority"
+        "MONGO_DB_URL": "mongodb+srv://admin-Ankit:<password>@cluster0.xq3rv.mongodb.net/users-yellow?retryWrites=true&w=majority"
     }
 }
