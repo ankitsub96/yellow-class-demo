@@ -141,34 +141,34 @@ Functionalities and Sample endpoints-
         },
         "data": [
             {
-            "name": "group16",
-            "members": "group16",
-            "adminId": "group16",
-            "createdAt": "2021-05-16T14:08:37.383Z"
-            },
-            {
-            "name": "group17",
-            "members": "group17",
-            "adminId": "group17",
-            "createdAt": "2021-05-16T14:08:40.620Z"
-            },
-            {
-            "name": "group18",
-            "members": "group18",
-            "adminId": "group18",
-            "createdAt": "2021-05-16T14:08:44.815Z"
-            },
-            {
-            "name": "group19",
-            "members": "group19",
-            "adminId": "group19",
-            "createdAt": "2021-05-16T14:08:48.317Z"
-            },
-            {
-            "name": "group20",
-            "members": "group20",
-            "adminId": "group20",
-            "createdAt": "2021-05-16T14:08:52.170Z"
+                "name": "group16",
+                "members": [],
+                "adminId": "60a125b48eec6e0015d97572",
+                "createdAt": "2021-05-16T14:08:37.383Z"
+                },
+                {
+                "name": "group17",
+                "members": [],
+                "adminId": "60a125b48eec6e0015d97572",
+                "createdAt": "2021-05-16T14:08:40.620Z"
+                },
+                {
+                "name": "group18",
+                "members": [],
+                "adminId": "60a125b48eec6e0015d97572",
+                "createdAt": "2021-05-16T14:08:44.815Z"
+                },
+                {
+                "name": "group19",
+                "members": [],
+                "adminId": "60a125b48eec6e0015d97572",
+                "createdAt": "2021-05-16T14:08:48.317Z"
+                },
+                {
+                "name": "group20",
+                "members": [],
+                "adminId": "60a125b48eec6e0015d97572",
+                "createdAt": "2021-05-16T14:08:52.170Z"
             }
         ]
     }
