@@ -46,6 +46,7 @@ module.exports = {
  
       if (msgCreatedobj && msgCreatedobj._id) { 
         let data = {
+          msgId: msgCreatedobj._id,
           msg: msgCreatedobj.msg, 
           type: msgCreatedobj.type,  
         }

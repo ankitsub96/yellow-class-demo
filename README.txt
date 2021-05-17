@@ -176,3 +176,98 @@ Functionalities and Sample endpoints-
    Here, limit refers to the pagination size and delta refers to which (page) is to be fetched, so that appropriate number of mongo documents can be skipped.
    The token used here is returned when user logs in using the correct credentials.
    The name field is compulsory. 
+
+
+   6. Post a direct message to a sender by Receiver's Id- 
+
+   Method- POST
+   URL- https://yellow-class-demo.herokuapp.com/messages/
+
+   Headers- {
+       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGExMjViNDhlZWM2ZTAwMTVkOTc1NzIiLCJuYW1lIjoiQW5raXQiLCJlbWFpbCI6ImFua2l0c3ViOTZAZ21haWwuY29tIiwic3RhdHVzIjoiYWN0aXZlIiwiaWF0IjoxNjIxMTczNzIxLCJleHAiOjE2MjExNzczMjF9.FTHtTxojT_sa29odFFTPuURuHhqq10FZDPxClM1_65o
+   } 
+    Body-{
+        "msg": "msg10",
+        "recId": "60a129328eec6e0015d97588"
+    }
+
+   output- 
+   {
+        "status": {
+            "message": "Message sent",
+            "code": 200
+        },
+        "data": {
+            "msgId": "60a20e5af967470015fae3de",
+            "msg": "msg10",
+            "type": "direct",
+            "recId": "60a129328eec6e0015d97588"
+        }
+    }
+   Remarks-
+   The token used here is returned when user logs in using the correct credentials.
+   The msg and recId field is compulsory. 
+
+
+
+   7. Post a Group message to a group by groupId- 
+
+   Method- POST
+   URL- https://yellow-class-demo.herokuapp.com/messages/
+
+   Headers- {
+       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGExMjViNDhlZWM2ZTAwMTVkOTc1NzIiLCJuYW1lIjoiQW5raXQiLCJlbWFpbCI6ImFua2l0c3ViOTZAZ21haWwuY29tIiwic3RhdHVzIjoiYWN0aXZlIiwiaWF0IjoxNjIxMTczNzIxLCJleHAiOjE2MjExNzczMjF9.FTHtTxojT_sa29odFFTPuURuHhqq10FZDPxClM1_65o
+   } 
+    Body-{
+        "msg": "msg10 to group1",
+        "groupId": "60a1272d8eec6e0015d97574"
+    }
+
+   output- 
+   {
+        "status": {
+            "message": "Message sent",
+            "code": 200
+        },
+        "data": {
+            "msgId": "60a211e9f967470015fae3e8",
+            "msg": "msg10 to group1",
+            "type": "group",
+            "groupId": "60a1272d8eec6e0015d97574"
+        }
+    }
+   Remarks-
+   The token used here is returned when user logs in using the correct credentials.
+   The msg and recId field is compulsory. 
+
+
+
+   8. Get a Group message to a group by groupId- 
+
+   Method- GET
+   URL- https://yellow-class-demo.herokuapp.com/messages/
+
+   Headers- {
+       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGExMjViNDhlZWM2ZTAwMTVkOTc1NzIiLCJuYW1lIjoiQW5raXQiLCJlbWFpbCI6ImFua2l0c3ViOTZAZ21haWwuY29tIiwic3RhdHVzIjoiYWN0aXZlIiwiaWF0IjoxNjIxMTczNzIxLCJleHAiOjE2MjExNzczMjF9.FTHtTxojT_sa29odFFTPuURuHhqq10FZDPxClM1_65o
+   } 
+    Body-{
+        "msg": "msg10 to group1",
+        "groupId": "60a1272d8eec6e0015d97574"
+    }
+
+   output- 
+   {
+        "status": {
+            "message": "Message sent",
+            "code": 200
+        },
+        "data": {
+            "msgId": "60a211e9f967470015fae3e8",
+            "msg": "msg10 to group1",
+            "type": "group",
+            "groupId": "60a1272d8eec6e0015d97574"
+        }
+    }
+   Remarks-
+   The token used here is returned when user logs in using the correct credentials.
+   The msg and recId field is compulsory. 

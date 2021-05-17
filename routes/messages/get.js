@@ -24,7 +24,7 @@ module.exports = {
 			if (!(req.query.groupId || req.query.senderId)) {
 				return res.status(401).json({
 					status: {
-						message: `Specify either a groupId or a recId`,
+						message: `Specify either a groupId or a senderId`,
 						code: 401,
 					},
 				});
@@ -50,7 +50,7 @@ module.exports = {
 						},
 					}); 
 				}
-				msgFoundArr = await Message.find({ type: 'group', groupId, status: 'active' }).sort(-1).skip(delta * limit).limit(limit)
+				msgFoundArr = await Message.find({ type: 'group', groupId, status: 'active' }).sort("createdAt",-1).skip(delta * limit).limit(limit)
 
 			} else if (req.query.senderId) {
 				let senderId = req.query.senderId
