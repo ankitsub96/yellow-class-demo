@@ -7,6 +7,8 @@ module.exports = {
 
 	fetchMessages: async (req, res, next) => {
 		try {
+			// console.log(req.userData)
+			let userId = req.userData.userId
 			let requiredInputs = ['delta', 'limit']
 			requiredInputs.forEach(input => {
 				if (!req.query[input]) {
@@ -42,7 +44,7 @@ module.exports = {
 						},
 					}); 
 				}
-				if(!foundGroup.members.includes(req.userdata.userId)){
+				if(!foundGroup.members.includes(userId)){
 					return res.status(401).json({
 						status: {
 							message: `Unauthorised. It seems that you are not a member of this group`,
@@ -50,7 +52,7 @@ module.exports = {
 						},
 					}); 
 				}
-				msgFoundArr = await Message.find({ type: 'group', groupId, status: 'active' }).sort("createdAt",-1).skip(delta * limit).limit(limit)
+				msgFoundArr = await Message.find({ type: 'group', groupId, status: 'active' }).sort({"createdAt": 'desc'}).skip(delta * limit).limit(limit)
 
 			} else if (req.query.senderId) {
 				let senderId = req.query.senderId
