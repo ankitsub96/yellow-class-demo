@@ -23,6 +23,7 @@ module.exports = {
 			let groupsArr = await Group.find({ status: 'active' }).skip(delta * limit).limit(limit)
 			let groupsToSend = groupsArr.map(group=>{
 				return {
+					groupId: group._id,
 					name: group.name,  
 					members: group.members,
 					adminId: group.adminId,
