@@ -33,6 +33,23 @@ module.exports = {
 			let msgFoundArr
 			if (req.query.groupId) {
 				let groupId = req.query.groupId
+				let foundGroup = await Group.findOne({_id: groupId})
+				if(!(foundGroup && foundGroup._id)){
+					return res.status(401).json({
+						status: {
+							message: `Invalid GroupId. Please specify correct groupId`,
+							code: 401,
+						},
+					}); 
+				}
+				if(!foundGroup.members.includes(req.userdata.userId)){
+					return res.status(401).json({
+						status: {
+							message: `Unauthorised. It seems that you are not a member of this group`,
+							code: 401,
+						},
+					}); 
+				}
 				msgFoundArr = await Message.find({ type: 'group', groupId, status: 'active' }).sort(-1).skip(delta * limit).limit(limit)
 
 			} else if (req.query.senderId) {
