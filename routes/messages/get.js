@@ -56,7 +56,7 @@ module.exports = {
 
 			} else if (req.query.senderId) {
 				let senderId = req.query.senderId
-				msgFoundArr = await Message.find({ type: 'group', senderId, status: 'active' }).sort(-1).skip(delta * limit).limit(limit)
+				msgFoundArr = await Message.find({ type: 'group', senderId, status: 'active' }).sort({"createdAt": 'desc'}).skip(delta * limit).limit(limit)
 			}
 
 			let msgsToSend = msgFoundArr.map(msg => {

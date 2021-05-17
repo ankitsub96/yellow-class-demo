@@ -242,32 +242,61 @@ Functionalities and Sample endpoints-
 
 
 
-   8. Get a Group message to a group by groupId- 
+   8. Get latest Group messages to a group by groupId- 
 
    Method- GET
-   URL- https://yellow-class-demo.herokuapp.com/messages/
+   URL- http://yellow-class-demo.herokuapp.com/messages/?delta=3&limit=2&groupId=60a1272d8eec6e0015d97574
 
    Headers- {
        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGExMjViNDhlZWM2ZTAwMTVkOTc1NzIiLCJuYW1lIjoiQW5raXQiLCJlbWFpbCI6ImFua2l0c3ViOTZAZ21haWwuY29tIiwic3RhdHVzIjoiYWN0aXZlIiwiaWF0IjoxNjIxMTczNzIxLCJleHAiOjE2MjExNzczMjF9.FTHtTxojT_sa29odFFTPuURuHhqq10FZDPxClM1_65o
-   } 
-    Body-{
-        "msg": "msg10 to group1",
-        "groupId": "60a1272d8eec6e0015d97574"
-    }
+   }
 
    output- 
    {
         "status": {
-            "message": "Message sent",
-            "code": 200
+            "message": "Messages requested",
+            "code": 201
         },
-        "data": {
-            "msgId": "60a211e9f967470015fae3e8",
-            "msg": "msg10 to group1",
+        "data": [
+            {
+            "msgId": "60a211d7f967470015fae3e2",
+            "msg": "msg4 to group1",
             "type": "group",
+            "senderId": "60a125b48eec6e0015d97572",
             "groupId": "60a1272d8eec6e0015d97574"
+            },
+            {
+            "msgId": "60a211d5f967470015fae3e1",
+            "msg": "msg3 to group1",
+            "type": "group",
+            "senderId": "60a125b48eec6e0015d97572",
+            "groupId": "60a1272d8eec6e0015d97574"
+            }
+        ]
+    }
+   Remarks-
+   The requesting user must be a member of the group.
+   The token used here is returned when user logs in using the correct credentials.
+   The delta, limit and groupId fields are compulsory, when trying to fetch messages from a group. 
+
+
+   8. Get latest Group messages to a group by groupId, when the requesting user is not a group member- 
+
+   Method- GET
+   URL- http://yellow-class-demo.herokuapp.com/messages/?delta=3&limit=2&groupId=60a127338eec6e0015d97575
+
+   Headers- {
+       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGExMjViNDhlZWM2ZTAwMTVkOTc1NzIiLCJuYW1lIjoiQW5raXQiLCJlbWFpbCI6ImFua2l0c3ViOTZAZ21haWwuY29tIiwic3RhdHVzIjoiYWN0aXZlIiwiaWF0IjoxNjIxMTczNzIxLCJleHAiOjE2MjExNzczMjF9.FTHtTxojT_sa29odFFTPuURuHhqq10FZDPxClM1_65o
+   }
+
+   output- 
+   {
+        "status": {
+            "message": "Unauthorised. It seems that you are not a member of this group",
+            "code": 401
         }
     }
    Remarks-
+   The requesting user must be a member of the group.
    The token used here is returned when user logs in using the correct credentials.
-   The msg and recId field is compulsory. 
+   The delta, limit and groupId fields are compulsory, when trying to fetch messages from a group. 
