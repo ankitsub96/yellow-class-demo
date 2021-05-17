@@ -7,6 +7,7 @@ let post = require('./post');
 
 //post requests 
 router.get('/', checkAuth, get.fetchMessages); 
+router.get('/all', checkAuth, get.fetchAllMessages);
 router.post('/', checkAuth, post.createMessage); 
 
 module.exports = router;
